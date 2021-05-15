@@ -6,7 +6,7 @@ sudo apt upgrade
 
 #package and java
 sudo apt install ccache git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
-imagemagick python3-virtualenv openjdk-8-jdk 
+imagemagick virtualenv openjdk-8-jdk 
  
 #installing repo and rbuild
 mkdir ~/bin
@@ -29,7 +29,7 @@ git config --global user.email gnidko02@gmail.com
 repo init 
 mkdir -p .repo/local_manifests
 curl https://raw.githubusercontent.com/meizucustoms/local_manifest/master/mzlocal_oreo.xml > .repo/local_manifests/mz.xml
-repo sync -c -j $(nproc) --no-tags
+#repo sync -c -j $(nproc) --no-tags
 
 #When Jack diagnose gives error 35 (SSL error) the following steps worked for me
 #Edit java.security file under /etc/java-8-openjdk/security/
