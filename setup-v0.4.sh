@@ -28,7 +28,7 @@ git config --global user.email gnidko02@gmail.com
 #working with repo
 repo init -u git://github.com/LineageOS/android.git -b lineage-15.1
 mkdir -p .repo/local_manifests
-curl https://raw.githubusercontent.com/meizucustoms/local_manifest/master/mzlocal_oreo.xml > .repo/local_manifests/mz.xml
+curl https://raw.githubusercontent.com/Pixaler/local_manifest/master/m1721-rebase.xml > .repo/local_manifests/mz.xml
 #repo sync -c -j $(nproc) --no-tags
 
 #When Jack diagnose gives error 35 (SSL error) LINK:https://stackoverflow.com/questions/67364721/error-in-building-android-image-fails-with-jack-server
