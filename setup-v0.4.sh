@@ -1,4 +1,4 @@
-#I create this script with elementaryOS 5.1.7(Ubuntu 18.04)
+#I create this script with Kubuntu 21.04
 #But you can try on another distro
 #update system
 sudo apt update
@@ -6,7 +6,7 @@ sudo apt upgrade
 
 #package and java
 sudo apt install ccache git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
-imagemagick virtualenv openjdk-8-jdk 
+imagemagick virtualenv openjdk-8-jdk python2 libncurses5
  
 #installing repo and rbuild
 mkdir ~/bin
@@ -26,12 +26,12 @@ git config --global user.name Vladimir Gnidko
 git config --global user.email gnidko02@gmail.com
 
 #working with repo
-repo init 
+repo init -u git://github.com/LineageOS/android.git -b lineage-15.1
 mkdir -p .repo/local_manifests
 curl https://raw.githubusercontent.com/meizucustoms/local_manifest/master/mzlocal_oreo.xml > .repo/local_manifests/mz.xml
 #repo sync -c -j $(nproc) --no-tags
 
-#When Jack diagnose gives error 35 (SSL error) the following steps worked for me
+#When Jack diagnose gives error 35 (SSL error) LINK:https://stackoverflow.com/questions/67364721/error-in-building-android-image-fails-with-jack-server
 #Edit java.security file under /etc/java-8-openjdk/security/
 #Remove TLSv1, TLSv1.1 from jdk.tls.disabledAlgorithms
 #Restart the jack server:
