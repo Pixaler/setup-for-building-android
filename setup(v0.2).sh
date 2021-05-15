@@ -32,6 +32,12 @@ curl https://raw.githubusercontent.com/meizucustoms/local_manifest/master/mzloca
 repo sync -c -j $(nproc) --no-tags
 
 #When Jack diagnose gives error 35 (SSL error) the following steps worked for me
+#Edit java.security file under /etc/java-8-openjdk/security/
+#Remove TLSv1, TLSv1.1 from jdk.tls.disabledAlgorithms
+#Restart the jack server:
+   #cd <aosp-home-dir>/prebuilts/sdk/tools/
+   #./jack-admin kill-server
+   #./jack-admin start-server
 
 
 
